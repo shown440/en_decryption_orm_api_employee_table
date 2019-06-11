@@ -78,9 +78,13 @@ class Store(Resource):
         print(type(text_to_dict))
 
 
-        new_store = {"name":data["name"], "designation":data["designation"], "manager_id":data["manager_id"],
-                "date_of_birth":data["date_of_birth"], "salary":data["salary"], "commission":data["commission"],
-                "department_no":data["department_no"]}
+        new_store = { "name":text_to_dict["name"], "designation":text_to_dict["designation"],
+            "manager_id":text_to_dict["manager_id"], "date_of_birth":text_to_dict["date_of_birth"],
+            "salary":text_to_dict["salary"], "commission":text_to_dict["commission"],
+            "department_no":text_to_dict["department_no"]   
+
+        }
+
         #print("#########################   ",new_store)
         store = StoreModel(my_store_id[0], new_store["name"], new_store["designation"], new_store["manager_id"], datetime_object.date(),
                             int(new_store["salary"]), int(new_store["commission"]), int(new_store["department_no"]))
